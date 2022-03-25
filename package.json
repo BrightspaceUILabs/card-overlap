@@ -34,9 +34,7 @@
     "stylelint": "^14"
   },
   "files": [
-    "card-overlay.js",
-    "card-overlay.serge.json",
-    "/lang"
+    "card-overlay.js"
   ],
   "publishConfig": {
     "access": "public"
