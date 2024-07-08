@@ -11,12 +11,10 @@ jobs:
         with:
           node-version-file: .nvmrc
       - name: Install dependencies
-        run: |
-          npx playwright install --with-deps
-          npm install
+        run: npm install
       - name: Lint (JavaScript)
         run: npm run lint:eslint
       - name: Lint (CSS)
         run: npm run lint:style
-      - name: Unit Tests (All Browsers)
-        run: npm run test:headless:ci
+      - name: Unit Tests
+        run: npm run test:unit

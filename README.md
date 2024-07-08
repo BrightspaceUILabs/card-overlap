@@ -30,50 +30,34 @@ npm install @brightspace-ui-labs/card-overlay
 
 ```html
 <script type="module">
-    import '@brightspace-ui-labs/card-overlay/card-overlay.js';
+  import '@brightspace-ui-labs/card-overlay/card-overlay.js';
 </script>
 <d2l-labs-card-overlay>My element</d2l-labs-card-overlay>
 ```
 
-**Properties:**
-
-| Property | Type | Description |
-|--|--|--|
-| | | |
-
-**Accessibility:**
-
-To make your usage of `d2l-labs-card-overlay` accessible, use the following properties when applicable:
-
-| Attribute | Description |
-|--|--|
-| | |
-
-## Developing, Testing and Contributing
+## Developing and Contributing
 
 After cloning the repo, run `npm install` to install dependencies.
 
-### Linting
-
-```shell
-# eslint and lit-analyzer
-npm run lint
-
-# eslint only
-npm run lint:eslint
-```
-
 ### Testing
 
+To run the full suite of tests:
+
 ```shell
-# lint & run headless unit tests
 npm test
+```
 
-# unit tests only
-npm run test:headless
+Alternatively, tests can be selectively run:
 
-# debug or run a subset of local unit tests
-npm run test:headless:watch
+```shell
+# eslint
+npm run lint:eslint
+
+# stylelint
+npm run lint:style
+
+# unit tests
+npm run test:unit
 ```
 
 ### Visual Diff Testing
