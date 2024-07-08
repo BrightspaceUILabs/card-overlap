@@ -1,4 +1,4 @@
-import { css, html, LitElement } from 'lit';
+import { css, html, LitElement, nothing } from 'lit';
 import { bodyStandardStyles } from '@brightspace-ui/core/components/typography/styles.js';
 import { SkeletonMixin } from '@brightspace-ui/core/components/skeleton/skeleton-mixin.js';
 
@@ -62,7 +62,7 @@ class CardOverlay extends SkeletonMixin(LitElement) {
 
 	render() {
 		if (!this.skeleton) {
-			return html``;
+			return nothing;
 		}
 
 		return html`
