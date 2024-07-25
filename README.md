@@ -11,7 +11,6 @@
 > - [ ] [Cross-browser testing](https://github.com/BrightspaceUI/guide/wiki/Testing#cross-browser-testing-with-sauce-labs)
 > - [ ] [Unit tests](https://github.com/BrightspaceUI/guide/wiki/Testing#testing-with-polymer-test) (if applicable)
 > - [ ] [Accessibility tests](https://github.com/BrightspaceUI/guide/wiki/Testing#automated-accessibility-testing-with-axe)
-> - [ ] [Visual diff tests](https://github.com/BrightspaceUI/visual-diff)
 > - [ ] [Localization](https://github.com/BrightspaceUI/guide/wiki/Localization) with Serge (if applicable)
 > - [ ] Demo page
 > - [ ] README documentation
@@ -60,29 +59,14 @@ npm run lint:style
 npm run test:unit
 ```
 
-### Visual Diff Testing
-
-This repo uses the [@brightspace-ui/visual-diff utility](https://github.com/BrightspaceUI/visual-diff/) to compare current snapshots against a set of golden snapshots stored in source control.
-
-The golden snapshots in source control must be updated by the [visual-diff GitHub Action](https://github.com/BrightspaceUI/actions/tree/main/visual-diff).  If a pull request results in visual differences, a draft pull request with the new goldens will automatically be opened against its branch.
-
-To run the tests locally to help troubleshoot or develop new tests, first install these dependencies:
+This repo uses [@brightspace-ui/testing](https://github.com/BrightspaceUI/testing)'s vdiff command to perform visual regression testing:
 
 ```shell
-npm install @brightspace-ui/visual-diff@X mocha@Y puppeteer@Z  --no-save
-```
+# vdiff
+npm run test:vdiff
 
-Replace `X`, `Y` and `Z` with [the current versions](https://github.com/BrightspaceUI/actions/tree/main/visual-diff#current-dependency-versions) the action is using.
-
-Then run the tests:
-
-```shell
-# run visual-diff tests
-npx mocha './test/**/*.visual-diff.js' -t 10000
-# subset of visual-diff tests:
-npx mocha './test/**/*.visual-diff.js' -t 10000 -g some-pattern
-# update visual-diff goldens
-npx mocha './test/**/*.visual-diff.js' -t 10000 --golden
+# re-generate goldens
+npm run test:vdiff golden
 ```
 
 ### Running the demos
